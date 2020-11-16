@@ -928,7 +928,6 @@
   "purescript-pipe-op": "https://github.com/Risto-Stevcev/purescript-pipe-op.git",
   "purescript-pipes": "https://github.com/felixschl/purescript-pipes.git",
   "purescript-pipes-aff": "https://github.com/felixschl/purescript-pipes-aff.git",
-  "purescript-plaid-node": "https://github.com/piq9117/purescript-plaid-node.git",
   "purescript-plan": "https://github.com/Lupino/purescript-plan.git",
   "purescript-platform": "https://github.com/slamdata/purescript-platform.git",
   "purescript-plottable": "https://github.com/atomicits/purescript-plottable.git",
