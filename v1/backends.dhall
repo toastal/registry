@@ -15,12 +15,14 @@ the specification defined here.
 
 let Map = (./Prelude.dhall).Map.Type
 
-let Package = { name : Text, version : Text }
+let Package = ./PackageCoords.dhall
 
 let Backend = Package -> Text
 
+let maybeRevision = \(revision : Natural) -> if Natural/isZero revision then "" else "_r${Natural/show revision}"
+
 let backends = toMap
-  { exampleBackend = \(package : Package) -> "https://example.com/purescriptRegistry/${package.name}/${package.version}.tar.gz"
+  { main = \(package : Package) -> "https://packages.purescript.org/${package.name}/${package.version}${maybeRevision package.revision}.tar.gz"
   }
 
 in backends : Map Text Backend

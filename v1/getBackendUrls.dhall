@@ -15,7 +15,7 @@ $ dhall <<< './v1/getBackendUrls.dhall { name = "foo", version = "v1.2.3" }'
 
 let Prelude = ./Prelude.dhall
 
-let Package = { name : Text, version : Text}
+let Package = ./PackageCoords.dhall
 
 let Backend = { mapKey : Text, mapValue : (Package -> Text) }
 
