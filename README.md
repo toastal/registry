@@ -237,6 +237,7 @@ You can see the schema of this file [here](./v1/Metadata.dhall), and the main re
 - published versions and the SHA256 for their tarball as computed by [our CI](#Adding-a-new-package).
   Note: these are going to be sorted in ascending order according to [SemVer](https://semver.org) - when in
   doubt the sorting provided by [the `semver` package on NPM](https://www.npmjs.com/package/semver#comparison) is correct.
+  TODO: revisions? refs?
 - unpublished versions together with the reason for unpublishing
 - GitHub usernames of package maintainers, so that we'll be able to contact them if any action is needed for any of their packages
 
@@ -281,6 +282,8 @@ Trustees are allowed to publish __new revisions__ (i.e. versions that bump the `
 - relax version bounds
 - tighten version bounds
 - add/remove dependencies to make the package build correctly
+
+TODO: clarify revisions above here
 
 __Note: there is no API defined yet for this operation.__
 
@@ -332,7 +335,13 @@ to add more - in fact this can easily be done by:
 - then downloading the tarballs from an existing backend, and uploading them to the new location
 - update the [mappings file](./v1/backends.dhall) with the new Backend.
 
+-- TODO: clarify here that package managers should use the dhall files
+
+-- TODO: note that we have an official backend
+
 ### Downloading a package
+
+-- TODO: add revision here, maybe use PackageCoords
 
 A package manager should download a specific version of a package in the following way:
 1. given "package name" and "version", the URL to fetch the tarball can be computed as described above
@@ -366,11 +375,13 @@ What has happened already:
   New packages are referenced [in this file](./new-packages.json), while all the packages from the Bower
   registry are referenced [here](./bower-packages.json)
 - we have drafted how the registry should behave, what's the API, how things will look like, etc (this document)
+- we set up the first [storage backend](#Storage-backends), maintained by the Packaging Team
+
+-- TODO: who's the packaging team?
 
 What is happening right now:
 - we're figuring out the last details of [the package `Manifest`](#The-Package-Manifest), which is the big blocker
   for proceeding further, since it will be baked into all the tarballs uploaded to the storage.
-- setting up a [storage backend](#Storage-backends) maintained by the Packaging Team
 - writing up the [CI code](#The-Registry-CI) to import the Bower packages as described above
 
 What will happen after this:
@@ -381,6 +392,8 @@ What will happen after this:
   (most likely Spago)
 - then only after that we'll adjust package managers to use the tarballs from the Registry in a way that is compliant with this spec.
 
+
+-- TODO: want to get involved?
 
 ### The Registry CI
 
