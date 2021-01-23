@@ -130,7 +130,7 @@ main = Aff.launchAff_ do
 -- | Convert a Bowerfile into a Registry Manifest
 toManifest :: Bower.PackageMeta -> String -> GitHub.Address -> Manifest
 toManifest (Bower.PackageMeta bowerfile) version address
-  = { name, license, repository, targets, version }
+  = { name, license, repository, targets, version, revision: 0 }
   where
     subdir = Nothing
     name = stripPurescriptPrefix bowerfile.name

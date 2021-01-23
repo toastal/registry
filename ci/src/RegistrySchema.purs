@@ -13,6 +13,7 @@ import Foreign.Object as Foreign
 type Manifest =
   { name :: String
   , version :: String -- TODO: we should have a newtype for this
+  , revision :: Int
   , license :: String
   , repository :: Repo
   , targets :: Foreign.Object Target

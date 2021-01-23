@@ -36,6 +36,7 @@
       }
     }
   },
+  "revision": 0,
   "repository": {
     "githubOwner": "slamdata",
     "githubRepo": "purescript-aff"

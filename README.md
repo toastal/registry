@@ -112,6 +112,8 @@ let Manifest =
       , license : Text
       -- The version of this package
       , version : Text
+      -- The revision number for this Manifest in the current version
+      , revision : Natural
       -- The git repo the package is published at
       , repository : ./Repo.dhall
       -- Compilation targets for the Package
