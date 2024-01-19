@@ -485,7 +485,7 @@ When the registry receives an authenticated operation it takes the following ste
 
 #### 5.3 Unpublish a Package (Authenticated)
 
-**[Source](./lib/src/Registry/Operation.purs)**
+**[Source](./lib/src/Operation.purs)**
 
 Unpublishing a package version means that the following things happen:
 
